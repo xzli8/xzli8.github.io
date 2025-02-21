@@ -10,9 +10,19 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="Hello world。">
+<meta name="description" content="# 分布式系统的关键指标
+
+## 可扩展性（Scalability）
+分布式系统支持处理不断增大的数据量，扩展通常分为两类：
+### 水平扩展
+增加机器，比如NoSQL。">
 <meta property="og:title" content="系统设计学习笔记1-基础知识">
-<meta property="og:description" content="Hello world。">
+<meta property="og:description" content="# 分布式系统的关键指标
+
+## 可扩展性（Scalability）
+分布式系统支持处理不断增大的数据量，扩展通常分为两类：
+### 水平扩展
+增加机器，比如NoSQL。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://xzli8.github.io/post/xi-tong-she-ji-xue-xi-bi-ji-1--ji-chu-zhi-shi.html">
 <meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
@@ -73,7 +83,24 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>Hello world</p></div>
+<div class="markdown-body" id="postBody"><h1>分布式系统的关键指标</h1>
+<h2>可扩展性（Scalability）</h2>
+<p>分布式系统支持处理不断增大的数据量，扩展通常分为两类：</p>
+<h3>水平扩展</h3>
+<p>增加机器，比如NoSQL。</p>
+<h3>垂直扩展</h3>
+<p>升级机器，比如SQL。</p>
+<h2>可靠性（Reliability）</h2>
+<p>分布式系统通过冗余节点（redundancy）来解决单点故障（single point failure）问题，需要耗费一定的成本但是这是必须的。</p>
+<h2>可用性（Availability）</h2>
+<h3>可用性和可靠性的区别</h3>
+<p>可靠的系统一定可用，可用的系统不一定可靠。比如：没有安全防护功能的购物网站。</p>
+<h2>效率（Efficiency）</h2>
+<p>分布式系统的效率通常有两个衡量指标：</p>
+<h3>响应时间/延迟（response time / latency）</h3>
+<p>请求的响应时间</p>
+<h3>吞吐量/带宽 （throughput / bandwidth）</h3>
+<p>单位时间内响应请求的数量</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
