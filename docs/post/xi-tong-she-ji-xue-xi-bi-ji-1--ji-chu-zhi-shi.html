@@ -103,20 +103,18 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>单位时间内响应请求的数量</p>
 <h2>可维护性（Serviceability or Manageability）</h2>
 <p>Fix Bug / Update 的成本</p>
-<h1>负载均衡（Load Balance）</h1>
-<p>存在于client和web server之间、application server和cache server之间、application server和database之间等，通过反向代理（Reverse Proxy）来实现，通常有如下一些负载均衡算法：</p>
-<h3>完全随机（Full Random）</h3>
-<h3>加权随机（Weighted Random）</h3>
-<h3>完全轮询（Full Round）</h3>
-<h3>加权轮询（Weighted Round）</h3>
-<h3>平滑加权轮询（SmoothWeightedRound）</h3>
-<h3>一致性哈希（ConsistentHash）</h3>
-<h3>最小链接（Least connection）</h3>
-<p>负载均衡器（Load Balancer）本身也可能产生单点故障，可以用冗余节点的方式解决。</p>
+<h1>数据库（Database）</h1>
+<h2>SQL vs NoSQL</h2>
+<h1>索引（Index）</h1>
+<p>关系型数据库中为了加速查询而建立的数据结构，用表的一列或多列来建立。</p>
+<h1>数据分片（Sharding or Data Partitioning）</h1>
+<p>将一个大的database分成很多小的，通常有如下做法：</p>
+<h2>水平</h2>
+<h2>垂直</h2>
 <h1>缓存（Cache）</h1>
 <h2>假设</h2>
 <p>最近被访问的数据很有可能再次被访问。</p>
-<h2>失效策略（Invalidation Strategy）</h2>
+<h2>失效策略（Invalidation）</h2>
 <p>本质是做一致性（Consistency，CAP中的C）和效率（Availability，CAP中的A）的tradeoff。</p>
 <h3>Write-through</h3>
 <p>做法：同时写database和cache，都成功后才返回。如何保证对database和cache的操作要么同时成功要么同时失败？可以通过分布式事务（加分布式锁）完成，但会降低效率。（保证CAP中的C，牺牲A）<br>
@@ -127,11 +125,21 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h3>Write-back</h3>
 <p>做法：只写cache，异步写database。（保证CAP中的A，牺牲C）<br>
 优缺点：写效率高，但数据有丢失的风险。</p>
-<h2>驱逐/过期策略（Cache Eviction）</h2>
+<h2>驱逐/过期策略（Eviction）</h2>
 <h3>FIFO</h3>
 <h3>LIFO</h3>
 <h3>LRU</h3>
-<h3>LFU</h3></div>
+<h3>LFU</h3>
+<h1>负载均衡（Load Balance）</h1>
+<p>存在于client和web server之间、application server和cache server之间、application server和database之间等，通过反向代理（Reverse Proxy）来实现，通常有如下一些负载均衡算法：</p>
+<h3>完全随机（Full Random）</h3>
+<h3>加权随机（Weighted Random）</h3>
+<h3>完全轮询（Full Round）</h3>
+<h3>加权轮询（Weighted Round）</h3>
+<h3>平滑加权轮询（SmoothWeightedRound）</h3>
+<h3>一致性哈希（ConsistentHash）</h3>
+<h3>最小链接（Least connection）</h3>
+<p>负载均衡器（Load Balancer）本身也可能产生单点故障，可以用冗余节点的方式解决。</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
